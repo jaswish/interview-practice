@@ -93,6 +93,59 @@ fn is_palindrome(x: i32) -> bool {
     return true;
 }
 
+// Converts a roman numeral to an integer.
+pub fn roman_to_int(s: String) -> i32 {
+    let mut ans: i32 = 0;
+    for (i, char) in s.chars().enumerate() {
+        if char == 'I' {
+            ans += 1;
+        } else if char == 'V' {
+            if ans % 5 != 0 {
+                // this means we've added a one already
+                // so it should actually be a four
+                ans += 3
+            } else {
+                ans += 5;
+            }
+        } else if char == 'X' {
+            if ans % 10 != 0 {
+                // this means we've added a one already
+                // so it should actually be a nine
+                ans += 8;
+            } else {
+                ans += 10;
+            }
+        } else if char == 'L' {
+            if ans % 50 != 0 {
+                // this means we added a 10 already
+                // so it should actually be a forty
+                ans += 30;
+            } else {
+                ans += 50;
+            }
+        } else if char == 'C' {
+            if ans % 100 != 0 {
+                ans += 80;
+            } else {
+                ans += 100;
+            }
+        } else if char == 'D' {
+            if ans % 500 != 0 {
+                ans += 300;
+            } else {
+                ans += 500;
+            }
+        } else if char == 'M' {
+            if ans % 1000 != 0 {
+                ans += 800;
+            } else {
+                ans += 1000;
+            }
+        }
+    }
+    return ans;
+}
+
 fn main() {
     let mut input: String = String::from("Hello world");
     let ans = reverse_string(&mut input);
