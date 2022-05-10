@@ -64,10 +64,12 @@ bool isPalindrome(int x) {
     int i;
     for(i = 0; i < count/2; i++) {
         if(digits[i] != digits[count - i - 1]) {
+            free(digits);
             return false;
         }
     }
 
+    free(digits);
     return true;
 }
 
