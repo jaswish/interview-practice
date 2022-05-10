@@ -1,3 +1,4 @@
+# Reverses an input string.
 def reverse_string(input: str) -> str:
     for i in range(int(len(input)/2)):
         input = ''.join([input[0:i], 
@@ -7,6 +8,8 @@ def reverse_string(input: str) -> str:
                          input[(len(input) - i):len(input)]])
     return input
 
+# Counts the number of ones in the binary representation of
+# an integer.
 def count_ones(input: int) -> int:
     count = 0
     while input > 0:

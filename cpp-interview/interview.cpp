@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "string.h"
 
+// Reverses an input string.
 void reverse_string(char* input) {
     for(int i = 0; i < strlen(input) / 2; i++) {
         input[strlen(input) - i - 1] += input[i];
@@ -9,6 +10,8 @@ void reverse_string(char* input) {
     }
 }
 
+// Counts the number of ones in the binary representation
+// of an integer.
 unsigned int count_ones(unsigned int input) {
     int count = 0;
     while(input > 0) {

@@ -1,3 +1,4 @@
+// Reverses an input string.
 fn reverse_string(input: &mut String) -> String {
     let mut ans: String = String::new();
     while !input.is_empty() {
@@ -6,6 +7,8 @@ fn reverse_string(input: &mut String) -> String {
     return ans;
 }
 
+// Counts the number of ones in the binary representation
+// of an integer.
 fn count_ones(input: &mut u32) -> u32 {
     let mut count: u32 = 0;
     while *input > 0 {
@@ -15,6 +18,7 @@ fn count_ones(input: &mut u32) -> u32 {
     return count;
 }
 
+// Returns the fibonacci sequence of length n. Iterative method.
 fn fibonacci(n: u32) -> Vec<u32> {
     let mut ans: Vec<u32> = vec!();
     if n == 1 {
@@ -33,6 +37,7 @@ fn fibonacci(n: u32) -> Vec<u32> {
     return ans
 }
 
+// Classic fizzbuzz implementation.
 fn fizzbuzz(n: u32) -> Vec<String> {
     let mut ans: Vec<String> = vec!();
     for i in 1..n+1 {
@@ -51,6 +56,7 @@ fn fizzbuzz(n: u32) -> Vec<String> {
     return ans;
 }
 
+// Returns the two numbers in input that add up to target.
 fn two_sum(input: Vec<u32>, target: u32) -> Vec<u32> {
     let mut ans: Vec<u32> = vec!();
     for i in 0..input.len() {
@@ -67,6 +73,7 @@ fn two_sum(input: Vec<u32>, target: u32) -> Vec<u32> {
     return ans;
 }
 
+// Returns whether or not the input is a palindrome.
 fn is_palindrome(x: i32) -> bool {
     if x < 0 {
         return false;
